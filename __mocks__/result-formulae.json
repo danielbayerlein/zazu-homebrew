@@ -1,0 +1,17 @@
+{
+  "formulae": [
+    {
+      "title": "vim",
+      "value": "http://www.braumeister.org/formula/vim",
+      "subtitle": "Vi \"workalike\" with many additional features"
+    },
+    {
+      "title": "macvim",
+      "value": "http://www.braumeister.org/formula/macvim",
+      "subtitle": "GUI for vim, made for macOS"
+    }
+  ],
+  "title": "",
+  "value": "",
+  "subtitle": ""
+}

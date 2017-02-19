@@ -1,0 +1,26 @@
+{
+  "name": "zazu-braumeister",
+  "version": "1.0.0",
+  "description": "Search for Homebrew formulae with braumeister.org",
+  "icon": "icon.png",
+  "blocks": {
+    "input": [
+      {
+        "id": "braumeister",
+        "type": "PrefixScript",
+        "prefix": "brew",
+        "space": true,
+        "args": "Required",
+        "script": "src/index.js",
+        "connections": ["Open"]
+      }
+    ],
+    "output": [
+      {
+        "id": "Open",
+        "type": "OpenInBrowser",
+        "url": "{value}"
+      }
+    ]
+  }
+}
