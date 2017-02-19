@@ -27,7 +27,7 @@ describe('braumeister.js', () => {
         require('../__mocks__/result-empty.json'),
       )));
 
-      return braumeister.search('yarn')
+      return braumeister.search('abcdefghjkl')
         .then((packages) => {
           expect(packages).toBeInstanceOf(Array);
           expect(packages).toHaveLength(0);
