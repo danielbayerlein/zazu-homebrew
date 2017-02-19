@@ -1,5 +1,7 @@
 # zazu-braumeister
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/danielbayerlein/zazu-braumeister.svg)](https://greenkeeper.io/)
+
 > [Zazu](https://github.com/tinytacoteam/zazu) plugin to search for [Homebrew](https://brew.sh) formulae with [braumeister.org](http://www.braumeister.org)
 
 [![Build Status](https://travis-ci.org/danielbayerlein/zazu-braumeister.svg?branch=master)](https://travis-ci.org/danielbayerlein/zazu-braumeister)
