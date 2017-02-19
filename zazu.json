@@ -1,12 +1,12 @@
 {
-  "name": "zazu-braumeister",
+  "name": "zazu-homebrew",
   "version": "1.0.0",
   "description": "Search for Homebrew formulae with braumeister.org",
   "icon": "icon.png",
   "blocks": {
     "input": [
       {
-        "id": "braumeister",
+        "id": "homebrew",
         "type": "PrefixScript",
         "prefix": "brew",
         "space": true,

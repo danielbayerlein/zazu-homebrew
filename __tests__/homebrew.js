@@ -1,4 +1,4 @@
-describe('braumeister.js', () => {
+describe('homebrew.js', () => {
   beforeEach(() => {
     jest.resetAllMocks();
     jest.resetModules();
@@ -6,7 +6,7 @@ describe('braumeister.js', () => {
 
   describe('search', () => {
     let scrapeIt;
-    let braumeister;
+    let homebrew;
 
     beforeEach(() => {
       jest.mock('scrape-it');
@@ -15,7 +15,7 @@ describe('braumeister.js', () => {
       scrapeIt = require('scrape-it');
 
       // eslint-disable-next-line global-require
-      braumeister = require('../src/braumeister');
+      homebrew = require('../src/homebrew');
 
       // eslint-disable-next-line no-console
       console.error = jest.fn();
@@ -27,7 +27,7 @@ describe('braumeister.js', () => {
         require('../__mocks__/result-empty.json'),
       )));
 
-      return braumeister.search('abcdefghjkl')
+      return homebrew.search('abcdefghjkl')
         .then((packages) => {
           expect(packages).toBeInstanceOf(Array);
           expect(packages).toHaveLength(0);
@@ -40,7 +40,7 @@ describe('braumeister.js', () => {
         require('../__mocks__/result-formula.json'),
       )));
 
-      return braumeister.search('yarn')
+      return homebrew.search('yarn')
         .then((packages) => {
           expect(packages).toBeInstanceOf(Array);
           expect(packages).toHaveLength(1);
@@ -57,7 +57,7 @@ describe('braumeister.js', () => {
         require('../__mocks__/result-formulae.json'),
       )));
 
-      return braumeister.search('vim')
+      return homebrew.search('vim')
         .then((packages) => {
           expect(packages).toBeInstanceOf(Array);
           expect(packages).toHaveLength(2);
@@ -77,7 +77,7 @@ describe('braumeister.js', () => {
 
       scrapeIt.mockImplementation(() => new Promise((resolve, reject) => reject(body)));
 
-      return braumeister.search('abcdefghjkl')
+      return homebrew.search('abcdefghjkl')
         .catch(() => {
           // eslint-disable-next-line no-console
           expect(console.error).toHaveBeenCalledWith(body);
@@ -87,8 +87,8 @@ describe('braumeister.js', () => {
 
   describe('integration', () => {
     // eslint-disable-next-line global-require
-    const braumeister = require('../src/braumeister');
-    const searchResult = braumeister.search('vim');
+    const homebrew = require('../src/homebrew');
+    const searchResult = homebrew.search('vim');
 
     test('returns an array', () => (
       searchResult.then((packages) => {

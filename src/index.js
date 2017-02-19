@@ -1,3 +1,3 @@
-const braumeister = require('./braumeister');
+const homebrew = require('./homebrew');
 
-module.exports = () => name => braumeister.search(name);
+module.exports = () => name => homebrew.search(name);

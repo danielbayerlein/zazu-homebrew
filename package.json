@@ -1,5 +1,5 @@
 {
-  "name": "zazu-braumeister",
+  "name": "zazu-homebrew",
   "version": "1.0.0",
   "description": "Zazu plugin to search for Homebrew formulae with braumeister.org",
   "main": "src/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielbayerlein/zazu-braumeister.git"
+    "url": "git+https://github.com/danielbayerlein/zazu-homebrew.git"
   },
   "keywords": [
     "zazu",
@@ -22,9 +22,9 @@
   "author": "Daniel Bayerlein",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danielbayerlein/zazu-braumeister/issues"
+    "url": "https://github.com/danielbayerlein/zazu-homebrew/issues"
   },
-  "homepage": "https://github.com/danielbayerlein/zazu-braumeister#readme",
+  "homepage": "https://github.com/danielbayerlein/zazu-homebrew#readme",
   "devDependencies": {
     "eslint": "^3.15.0",
     "eslint-config-airbnb-base": "^11.1.0",

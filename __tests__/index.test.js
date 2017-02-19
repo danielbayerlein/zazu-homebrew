@@ -1,9 +1,9 @@
 const index = require('../src/');
-const braumeister = require('../src/braumeister');
+const homebrew = require('../src/homebrew');
 
 describe('index.js', () => {
   beforeEach(() => {
-    braumeister.search = jest.fn();
+    homebrew.search = jest.fn();
     index()('vim');
   });
 
@@ -11,7 +11,7 @@ describe('index.js', () => {
     jest.resetAllMocks();
   });
 
-  test('call braumeister.search with "vim"', () => {
-    expect(braumeister.search).toBeCalledWith('vim');
+  test('call homebrew.search with "vim"', () => {
+    expect(homebrew.search).toBeCalledWith('vim');
   });
 });
