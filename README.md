@@ -10,6 +10,8 @@
 To search formulae simply type `brew` then the name of the formula to search for.
 For example `brew vim`.
 
+![screenshot](./screenshot.png)
+
 ## Install
 
 Add `danielbayerlein/zazu-homebrew` inside of plugins block of your `~/.zazurc.json` file.
