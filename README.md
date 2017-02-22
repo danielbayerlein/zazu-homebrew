@@ -14,7 +14,7 @@ For example `brew vim`.
 
 ## Install
 
-Add `danielbayerlein/zazu-homebrew` inside of plugins block of your `~/.zazurc.json` file.
+Add `danielbayerlein/zazu-homebrew` inside of `plugins` block of your `~/.zazurc.json` file.
 
 ```json
 {
