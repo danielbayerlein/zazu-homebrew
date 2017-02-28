@@ -34,7 +34,7 @@
     "jest": "^19.0.0"
   },
   "dependencies": {
-    "scrape-it": "^3.2.2"
+    "scrape-it": "^3.3.0"
   },
   "jest": {
     "bail": true,
