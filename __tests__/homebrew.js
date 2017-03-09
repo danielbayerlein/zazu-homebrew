@@ -78,7 +78,7 @@ describe('homebrew.js', () => {
       scrapeIt.mockImplementation(() => new Promise((resolve, reject) => reject(body)));
 
       return homebrew.search('abcdefghjkl')
-        .catch(() => {
+        .then(() => {
           // eslint-disable-next-line no-console
           expect(console.error).toHaveBeenCalledWith(body);
         });
