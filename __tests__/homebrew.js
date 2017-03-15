@@ -1,3 +1,5 @@
+/* eslint global-require: 0 */
+
 describe('homebrew.js', () => {
   beforeEach(() => {
     jest.resetAllMocks();
@@ -7,23 +9,21 @@ describe('homebrew.js', () => {
   describe('search', () => {
     let scrapeIt;
     let homebrew;
+    let cache;
 
     beforeEach(() => {
       jest.mock('scrape-it');
-
-      // eslint-disable-next-line global-require
       scrapeIt = require('scrape-it');
 
-      // eslint-disable-next-line global-require
-      homebrew = require('../src/homebrew');
+      jest.mock('cache-conf');
+      cache = { get: jest.fn(), isExpired: jest.fn(), set: jest.fn() };
+      require('cache-conf').mockImplementation(() => cache);
 
-      // eslint-disable-next-line no-console
-      console.error = jest.fn();
+      homebrew = require('../src/homebrew');
     });
 
     test('returns an empty array', () => {
       scrapeIt.mockImplementation(() => new Promise(resolve => resolve(
-        // eslint-disable-next-line global-require
         require('../__mocks__/result-empty.json'),
       )));
 
@@ -36,7 +36,6 @@ describe('homebrew.js', () => {
 
     test('returns an array with formula', () => {
       scrapeIt.mockImplementation(() => new Promise(resolve => resolve(
-        // eslint-disable-next-line global-require
         require('../__mocks__/result-formula.json'),
       )));
 
@@ -53,7 +52,6 @@ describe('homebrew.js', () => {
 
     test('returns an array with formulae', () => {
       scrapeIt.mockImplementation(() => new Promise(resolve => resolve(
-        // eslint-disable-next-line global-require
         require('../__mocks__/result-formulae.json'),
       )));
 
@@ -72,21 +70,83 @@ describe('homebrew.js', () => {
         });
     });
 
-    test('call console.error with an error message', () => {
+    test('returns the expected error', () => {
       const body = 'Sorry, no formulae are matching your search.';
 
       scrapeIt.mockImplementation(() => new Promise((resolve, reject) => reject(body)));
 
-      return homebrew.search('abcdefghjkl')
-        .then(() => {
-          // eslint-disable-next-line no-console
-          expect(console.error).toHaveBeenCalledWith(body);
+      return homebrew.search('abcdefghijklmnopqrstuvwxyz')
+        .catch((error) => {
+          expect(error).toBe(body);
         });
+    });
+
+    describe('cache', () => {
+      const mockResult = require('../__mocks__/result-formulae.json').formulae;
+
+      beforeEach(() => {
+        scrapeIt.mockImplementation(() => new Promise(resolve => resolve(
+          require('../__mocks__/result-formulae.json'),
+        )));
+      });
+
+      test('call cache.get with the expected arguments', () => (
+        homebrew.search('vim')
+          .then(() => {
+            expect(cache.get).toBeCalledWith(
+              'zazu-homebrew.vim',
+              { ignoreMaxAge: true },
+            );
+          })
+      ));
+
+      test('call cache.set with the expected arguments', () => (
+        homebrew.search('vim')
+          .then(() => {
+            expect(cache.set).toBeCalledWith(
+              'zazu-homebrew.vim',
+              mockResult,
+              { maxAge: 3600000 },
+            );
+          })
+      ));
+
+      test('call cache.isExpired with the expected argument', () => {
+        cache.get = jest.fn(() => mockResult);
+
+        return homebrew.search('vim')
+          .then(() => {
+            expect(cache.isExpired).toBeCalledWith('zazu-homebrew.vim');
+          });
+      });
+
+      test('returns the cache result', () => {
+        cache.isExpired = jest.fn(() => false);
+        cache.get = jest.fn(() => mockResult);
+
+        return homebrew.search('vim')
+          .then((packages) => {
+            expect(packages).toEqual(mockResult);
+          });
+      });
+
+      test('returns the cache result when an error occurs', () => {
+        scrapeIt.mockImplementation(() => new Promise((resolve, reject) => reject()));
+
+        cache.isExpired = jest.fn(() => true);
+        cache.get = jest.fn(() => mockResult);
+
+        return homebrew.search('vim')
+          .then((packages) => {
+            expect(packages).toEqual(mockResult);
+          });
+      });
     });
   });
 
   describe('integration', () => {
-    // eslint-disable-next-line global-require
+    jest.mock('cache-conf');
+
     const homebrew = require('../src/homebrew');
     const searchResult = homebrew.search('vim');
 
