@@ -2415,9 +2415,9 @@ sax@^1.1.4, sax@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
-scrape-it@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/scrape-it/-/scrape-it-3.3.1.tgz#072b8dc76250dbc34b3928188cc06c0adaa65b94"
+scrape-it@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/scrape-it/-/scrape-it-3.3.2.tgz#516624aa2ddbeba0e1f9b92cca70dbf3bea8cd6d"
   dependencies:
     assured "^1.0.0"
     cheerio "^0.20.0"
