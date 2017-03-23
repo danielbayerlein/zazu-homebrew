@@ -56,13 +56,18 @@ module.exports.search = (query) => {
 
       // Formulae
       if (result.formulae.length) {
-        data = result.formulae;
+        data = result.formulae.map((obj) => {
+          const formula = obj;
+          formula.id = `${CACHE_CONF.key}.${formula.title}`;
+          return formula;
+        });
       }
 
       // Formula
       if (result.title && result.value && result.subtitle) {
         const formula = result;
         delete formula.formulae;
+        formula.id = `${CACHE_CONF.key}.${formula.title}`;
         data = [formula];
       }
 

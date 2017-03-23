@@ -44,6 +44,7 @@ describe('homebrew.js', () => {
           expect(packages).toBeInstanceOf(Array);
           expect(packages).toHaveLength(1);
 
+          expect(packages[0].id).toBe('zazu-homebrew.yarn');
           expect(packages[0].title).toBe('yarn');
           expect(packages[0].value).toBe('http://www.braumeister.org/formula/yarn');
           expect(packages[0].subtitle).toBe('Javascript package manager');
@@ -60,10 +61,12 @@ describe('homebrew.js', () => {
           expect(packages).toBeInstanceOf(Array);
           expect(packages).toHaveLength(2);
 
+          expect(packages[0].id).toBe('zazu-homebrew.vim');
           expect(packages[0].title).toBe('vim');
           expect(packages[0].value).toBe('http://www.braumeister.org/formula/vim');
           expect(packages[0].subtitle).toBe('Vi "workalike" with many additional features');
 
+          expect(packages[1].id).toBe('zazu-homebrew.macvim');
           expect(packages[1].title).toBe('macvim');
           expect(packages[1].value).toBe('http://www.braumeister.org/formula/macvim');
           expect(packages[1].subtitle).toBe('GUI for vim, made for macOS');
@@ -82,7 +85,11 @@ describe('homebrew.js', () => {
     });
 
     describe('cache', () => {
-      const mockResult = require('../__mocks__/result-formulae.json').formulae;
+      const mockResult = require('../__mocks__/result-formulae.json').formulae.map((obj) => {
+        const formula = obj;
+        formula.id = `zazu-homebrew.${formula.title}`;
+        return formula;
+      });
 
       beforeEach(() => {
         scrapeIt.mockImplementation(() => new Promise(resolve => resolve(
@@ -153,6 +160,12 @@ describe('homebrew.js', () => {
     test('returns an array', () => (
       searchResult.then((packages) => {
         expect(packages).toBeInstanceOf(Array);
+      })
+    ));
+
+    test('returns an object with a id', () => (
+      searchResult.then((packages) => {
+        expect(packages[0].id).toBeDefined();
       })
     ));
 
