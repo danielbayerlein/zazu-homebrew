@@ -1,6 +1,6 @@
 {
   "name": "zazu-homebrew",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Search for Homebrew formulae with braumeister.org",
   "icon": "icon.png",
   "blocks": {
