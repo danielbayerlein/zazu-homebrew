@@ -1,17 +1,15 @@
-const index = require('../src/');
-const homebrew = require('../src/homebrew');
+const index = require('../src/')
+const homebrew = require('../src/homebrew')
 
 describe('index.js', () => {
   beforeEach(() => {
-    homebrew.search = jest.fn();
-    index()('vim');
-  });
+    homebrew.search = jest.fn()
+    index()('vim')
+  })
 
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
+  afterEach(() => jest.resetAllMocks())
 
   test('call homebrew.search with "vim"', () => {
-    expect(homebrew.search).toBeCalledWith('vim');
-  });
-});
+    expect(homebrew.search).toBeCalledWith('vim')
+  })
+})

@@ -1,3 +1,3 @@
-const homebrew = require('./homebrew');
+const homebrew = require('./homebrew')
 
-module.exports = () => name => homebrew.search(name);
+module.exports = () => name => homebrew.search(name)
