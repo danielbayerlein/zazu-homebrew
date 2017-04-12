@@ -1,5 +1,5 @@
-const index = require('../src/')
-const homebrew = require('../src/homebrew')
+const index = require('../../src/')
+const homebrew = require('../../src/homebrew')
 
 describe('index.js', () => {
   beforeEach(() => {

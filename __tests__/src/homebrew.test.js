@@ -17,12 +17,12 @@ describe('homebrew.js', () => {
       cache = { get: jest.fn(), isExpired: jest.fn(), set: jest.fn() }
       require('cache-conf').mockImplementation(() => cache)
 
-      homebrew = require('../src/homebrew')
+      homebrew = require('../../src/homebrew')
     })
 
     test('returns an empty array', () => {
       scrapeIt.mockImplementation(() => new Promise((resolve) => resolve(
-        require('../__mocks__/result-empty.json')
+        require('../../__mocks__/result-empty.json')
       )))
 
       return homebrew.search('abcdefghjkl')
@@ -34,7 +34,7 @@ describe('homebrew.js', () => {
 
     test('returns an array with formula', () => {
       scrapeIt.mockImplementation(() => new Promise((resolve) => resolve(
-        require('../__mocks__/result-formula.json')
+        require('../../__mocks__/result-formula.json')
       )))
 
       return homebrew.search('yarn')
@@ -51,7 +51,7 @@ describe('homebrew.js', () => {
 
     test('returns an array with formulae', () => {
       scrapeIt.mockImplementation(() => new Promise((resolve) => resolve(
-        require('../__mocks__/result-formulae.json')
+        require('../../__mocks__/result-formulae.json')
       )))
 
       return homebrew.search('vim')
@@ -83,7 +83,7 @@ describe('homebrew.js', () => {
     })
 
     describe('cache', () => {
-      const mockResult = require('../__mocks__/result-formulae.json').formulae.map((obj) => {
+      const mockResult = require('../../__mocks__/result-formulae.json').formulae.map((obj) => {
         const formula = obj
         formula.id = `zazu-homebrew.${formula.title}`
         return formula
@@ -91,7 +91,7 @@ describe('homebrew.js', () => {
 
       beforeEach(() => {
         scrapeIt.mockImplementation(() => new Promise((resolve) => resolve(
-          require('../__mocks__/result-formulae.json')
+          require('../../__mocks__/result-formulae.json')
         )))
       })
 
@@ -153,7 +153,7 @@ describe('homebrew.js', () => {
   describe('integration', () => {
     jest.mock('cache-conf')
 
-    const homebrew = require('../src/homebrew')
+    const homebrew = require('../../src/homebrew')
     const searchResult = homebrew.search('vim')
 
     test('returns an array', () => (
