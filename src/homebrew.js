@@ -30,18 +30,15 @@ module.exports.search = (query) => {
   return new Promise((resolve, reject) => (
     scrapeIt(`${SEARCH_URL}/${query}`, {
       formulae: {
-        listItem: '.listing > .formula',
+        listItem: 'div.listing tr.formula',
         data: {
-          title: '.formula',
+          title: 'a.formula',
           value: {
             selector: 'a.formula',
             attr: 'href',
             convert: path => `${URL}${path}`
           },
-          subtitle: {
-            how: 'html',
-            convert: html => html.match(/<br>(.*)<br>/)[1]
-          }
+          subtitle: '.desc'
         }
       },
       title: 'h1',
