@@ -28,13 +28,13 @@
   "homepage": "https://github.com/danielbayerlein/zazu-homebrew#readme",
   "devDependencies": {
     "husky": "^0.14.3",
-    "jest": "^20.0.4",
+    "jest": "^21.0.2",
     "snazzy": "^7.0.0",
     "standard": "^10.0.3"
   },
   "dependencies": {
     "cache-conf": "^0.5.0",
-    "scrape-it": "^3.3.2"
+    "scrape-it": "^3.3.3"
   },
   "jest": {
     "bail": true,
