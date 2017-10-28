@@ -174,9 +174,9 @@ assert-plus@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-0.2.0.tgz#d74e1b87e7affc0db8aadb7021f3fe48101ab234"
 
-assured@^1.0.0:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/assured/-/assured-1.0.6.tgz#3e958767a689a27da25b075c9a1fa5e65332d471"
+assured@^1.0.10, assured@^1.0.6:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/assured/-/assured-1.0.10.tgz#0ecced1a91e46482a28fb7b931b3c6c14e42118b"
   dependencies:
     noop6 "^1.0.1"
     sliced "^1.0.1"
@@ -489,12 +489,12 @@ chalk@^2.0.1:
     escape-string-regexp "^1.0.5"
     supports-color "^4.0.0"
 
-cheerio-req@^1.0.0:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/cheerio-req/-/cheerio-req-1.1.4.tgz#8ad0928abd84371ce79677307a730af5ba60d3b2"
+cheerio-req@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/cheerio-req/-/cheerio-req-1.2.0.tgz#f5efa8fa414c59378a1b8df21b8b8110273c3f79"
   dependencies:
     cheerio "^0.20.0"
-    tinyreq "^3.0.1"
+    tinyreq "^3.3.0"
 
 cheerio@^0.20.0:
   version "0.20.0"
@@ -819,9 +819,9 @@ env-paths@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/env-paths/-/env-paths-1.0.0.tgz#4168133b42bb05c38a35b1ae4397c8298ab369e0"
 
-err@^2.1.1:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/err/-/err-2.1.7.tgz#9c567d35396a82632d42f53eb082491871919e18"
+err@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/err/-/err-2.1.8.tgz#f10d38b2c813b326e9e7acd1c27b273eaba40f8b"
   dependencies:
     barbe "^3.0.4"
     iterate-object "^1.3.1"
@@ -1601,9 +1601,9 @@ is-dotfile@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-dotfile/-/is-dotfile-1.0.2.tgz#2c132383f39199f8edc268ca01b9b007d205cc4d"
 
-is-empty-obj@^1.0.3:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/is-empty-obj/-/is-empty-obj-1.0.8.tgz#3d4b3e829e2c9e373036c3aa1c8cd6e6d7c58d3d"
+is-empty-obj@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/is-empty-obj/-/is-empty-obj-1.0.9.tgz#7ef2b57f5499a0836d11981bc0b7dc63617ab96a"
 
 is-equal-shallow@^0.1.3:
   version "0.1.3"
@@ -2354,6 +2354,10 @@ noop6@^1.0.1:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/noop6/-/noop6-1.0.6.tgz#eb2b6b5ee1248a02838ee0cea12e8dd5caaf849b"
 
+noop6@^1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/noop6/-/noop6-1.0.7.tgz#96767bf2058ba59ca8cb91559347ddc80239fa8e"
+
 nopt@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
@@ -2413,9 +2417,9 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-obj-def@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/obj-def/-/obj-def-1.0.5.tgz#b2f23f9c70ca97a846e0b3b9591640e318dadfa3"
+obj-def@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/obj-def/-/obj-def-1.0.6.tgz#7754e1728849c2f934d1fdd2be72fe627ecb5b14"
   dependencies:
     deffy "^2.2.2"
 
@@ -2929,18 +2933,18 @@ sax@^1.1.4, sax@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
-scrape-it@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/scrape-it/-/scrape-it-3.3.3.tgz#927e8da88771b105cf5aa46778dafaf83a2d4671"
+scrape-it@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/scrape-it/-/scrape-it-4.0.0.tgz#16b71434523fd5e69c9655fe3183b2278b37328c"
   dependencies:
-    assured "^1.0.0"
+    assured "^1.0.10"
     cheerio "^0.20.0"
-    cheerio-req "^1.0.0"
-    err "^2.1.1"
-    is-empty-obj "^1.0.3"
+    cheerio-req "^1.2.0"
+    err "^2.1.8"
+    is-empty-obj "^1.0.9"
     iterate-object "^1.3.2"
-    obj-def "^1.0.0"
-    typpy "^2.3.2"
+    obj-def "^1.0.6"
+    typpy "^2.3.9"
 
 "semver@2 || 3 || 4 || 5", semver@5.3.0, semver@^5.3.0:
   version "5.3.0"
@@ -3269,11 +3273,13 @@ through@^2.3.6, through@~2.3.4, through@~2.3.8:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
-tinyreq@^3.0.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/tinyreq/-/tinyreq-3.2.2.tgz#e743718f45420c2f1db4f6d82a32c05b16a7d651"
+tinyreq@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/tinyreq/-/tinyreq-3.3.0.tgz#dfedabdb03e9c3365369f2de1d56aa6c7a816a52"
   dependencies:
+    assured "^1.0.6"
     follow-redirects "^0.2.0"
+    noop6 "^1.0.6"
     ul "^5.0.0"
 
 tmpl@1.0.x:
@@ -3322,9 +3328,15 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typpy@^2.0.0, typpy@^2.2.0, typpy@^2.3.1, typpy@^2.3.2, typpy@^2.3.4:
+typpy@^2.0.0, typpy@^2.2.0, typpy@^2.3.1, typpy@^2.3.4:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/typpy/-/typpy-2.3.8.tgz#5dfc0a1e9b9e4f9287ef8fa94dce8aa18103e581"
+  dependencies:
+    function.name "^1.0.3"
+
+typpy@^2.3.9:
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/typpy/-/typpy-2.3.9.tgz#28664fda5ea71dd718724f89d00060af1f09c38e"
   dependencies:
     function.name "^1.0.3"
 
